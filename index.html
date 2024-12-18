@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Antoine Briat</title>
     <style>
-        /* Déclaration de la police Micra avec chemin absolu */
+        /* Police Micra avec chemin absolu */
         @font-face {
             font-family: 'Micra';
             src: url('./fonts/Micra-Normal.ttf') format('truetype'); /* format correct */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Police Corbel avec chemin absolu */
+        @font-face {
+            font-family: 'Corbel';
+            src: url('./fonts/Corbel.ttf') format('truetype'); /* format correct */
             font-weight: normal;
             font-style: normal;
         }
@@ -30,13 +38,15 @@
             text-align: center;
         }
 
+        /* position logo */
         header img {
             width: 100px;
             height: auto;
             margin-bottom: 10px;
         }
 
-        header h1 { /* Antoine Briat */
+        /* Antoine Briat */
+        header h1 { 
             margin: 0;
             font-size: 1.5em;
             font-weight: 700;
@@ -44,6 +54,7 @@
             font-family: 'Micra', Arial, sans-serif; /* Utilise Micra avec fallback */
         }
 
+        /* police Horloger / dessinateur... */
         header p {
             margin: 10px 0 0;
             font-size: 1.2em;
@@ -51,12 +62,14 @@
             color: #555;
         }
 
-        /* Section principale */
+        /* Position des titres parents */
         .hero {
+            font-size: 1em;
             margin: 50px;
             text-align: center;
         }
 
+        /* titre enfant Mes projets */
         .hero h2 {
             font-size: 6em;
             margin: 0;
@@ -80,12 +93,12 @@
     color: inherit; /* Utilise la couleur définie dans .small-titles */
     transition: color 0.3s; /* Animation pour un effet de survol */
 }
-
+/* couleur effet survol */
 .small-titles a:hover {
     color: #000; /* Devient noir au survol */
 }
 
-/* Conteneur de l'image avec effet hover */
+/* Conteneur de l'image (avec effet hover) */
 .image-hover-container {
     position: relative;
     width: 100%; /* Largeur de l'image */
@@ -98,7 +111,7 @@
     height: auto;
     display: block;
 }
-
+/* position du texte hover */
 .hover-text {
     position: absolute;
     top: 50%; /* Centre verticalement */
@@ -117,16 +130,27 @@
 
 }
 
-/* Style spécifique pour la troisième image */
+/* Style spécifique du texte pour la troisième image (image fond blanc) */
 .third-image-container .hover-text {
-    color: #515151; /* Couleur de texte noire */
+    color: #656565; /* Couleur de texte noire */
+    text-shadow: 
         -1px -1px 0 #fff, 
         1px -1px 0 #fff, 
         -1px  1px 0 #fff, 
         1px  1px 0 #fff;
 }
 
-        /* Bouton Hamburger */
+/* Style pour les captions */
+.image-caption {
+    text-align: left; /* Aligne le texte à gauche */
+    margin: 15px 400px; /* Décalage (15px en haut, 20px sur les côtés) */
+    font-size: 1.5em; /* Légèrement plus grand */
+    font-weight: normal; /* Texte en gras */
+    color: #000000; /* Couleur légèrement plus foncée */
+    font-family: 'Corbel', Arial, sans-serif; /* Utilise Micra avec fallback */
+}
+
+        /* Position bouton Hamburger */
         .menu-icon {
             position: fixed;
             top: 20px;
@@ -138,14 +162,15 @@
             z-index: 1001;
         }
 
+        /* Couleur et taille bouton hamburger */
         .menu-icon div {
             width: 30px;
             height: 3px;
-            background-color: #000;
+            background-color: #000000;
             transition: transform 0.3s, opacity 0.3s;
         }
 
-        /* Menu plein écran */
+        /* Menu plein écran et couleur croix */
         .menu-fullscreen {
             position: fixed;
             top: 0;
@@ -153,7 +178,7 @@
             width: 100%;
             height: 100%;
             background-color: #000;
-            color: #fff;
+            color: #ffffff;
             display: none;
             flex-direction: column;
             justify-content: center;
@@ -161,13 +186,15 @@
             z-index: 1000;
         }
 
+        /* Texte menu plein écran */
         .menu-fullscreen a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 15px 0;
         }
 
+        /* Position de la croix */
         .menu-fullscreen .close-btn {
             position: absolute;
             top: 20px;
@@ -195,7 +222,7 @@
     <!-- En-tête -->
     <header>
         <!-- Ajout du logo -->
-        <img src="images/LOGO.png" alt="Logo">
+        <img src="images/LOGO2.png" alt="Logo">
         <h1 class="lined-text">antoine briat</h1>
         <p>Horloger / Dessinateur technique en mécanique de précision</p>
     </header>
@@ -211,32 +238,26 @@
 </nav>
     </section>
 
-    <!-- Section avec image et texte au survol -->
+    <!-- Section avec image de la came et texte au survol -->
 <div class="image-hover-container">
     <img src="images\Came.png" alt="Description de l'image">
     <div class="hover-text">Came d'équation du temps sur Mars</div>
 </div>
+<p class="image-caption"></main></p>
 
-    <!-- Image exemple -->
-    <div class="image-section"></div>
-
-    <!-- Section avec image et texte au survol -->
+    <!-- Section avec image du mécanimsme et texte au survol -->
 <div class="image-hover-container">
     <img src="images\Mcanisme d'edt Mars.png" alt="Description de l'image">
     <div class="hover-text">Mécanisme d'équation du temps sur Mars</div>
 </div>
+<p class="image-caption"></main></p>
 
-    <!-- Image exemple -->
-    <div class="image-section"></div>
-
-    <!-- Section avec image et texte au survol -->
+    <!-- Section avec image autocad et texte au survol -->
 <div class="image-hover-container third-image-container">
     <img src="images\Horloge Mars.png" alt="Description de l'image">
     <div class="hover-text">Trains d'engrenages pour une horloge martienne</div>
 </div>
-
-    <!-- Image exemple -->
-    <div class="image-section"></div>
+<p class="image-caption"></main></p>
 
     <!-- Bouton Hamburger -->
     <div class="menu-icon" onclick="toggleMenu()">
