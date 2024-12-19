@@ -1,295 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Antoine Briat</title>
+    
+    <!-- Import des polices -->
     <style>
-        /* Police Micra avec chemin absolu */
-        @font-face {
-            font-family: 'Micra';
-            src: url('./fonts/Micra-Normal.ttf') format('truetype'); /* format correct */
-            font-weight: normal;
-            font-style: normal;
-        }
+        @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
+        @font-face { font-family: 'Corbel'; src: url('./fonts/Corbel.ttf') format('truetype'); }
+        @font-face { font-family: 'Aeonik Light'; src: url('fonts/AeonikTRIAL-Light.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Regular'; src: url('fonts/AeonikTRIAL-Regular.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Bold'; src: url('fonts/AeonikTRIAL-Bold.otf') format('opentype'); }
 
-        /* Police Corbel avec chemin absolu */
-        @font-face {
-            font-family: 'Corbel';
-            src: url('./fonts/Corbel.ttf') format('truetype'); /* format correct */
-            font-weight: normal;
-            font-style: normal;
-        }
+        /* --- Styles globaux --- */
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #000; background-color: #fff; }
 
-        /* --- Styles CSS --- */
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #000;
-            background-color: #fff;
-        }
+        /* --- Loader --- */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
+        #loader img { width: 100px; height: auto; margin-bottom: 0px; }
+        #loader h1 { font-family: 'Micra', sans-serif; font-size: 2em; color: #000; }
 
-        /* En-tête */
-        header {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+        /* --- En-tête --- */
+        header { padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        header img { width: 100px; height: auto; margin-bottom: 10px; }
+        header h1 { margin: 0; font-size: 1.5em; font-weight: 700; text-transform: uppercase; font-family: 'Micra', Arial, sans-serif; }
+        header p { margin: 10px 0 0; font-size: 1.2em; font-weight: 300; color: #555; }
 
-        /* position logo */
-        header img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
+        /* --- Section principale --- */
+        .hero { font-size: 1em; margin: 50px; text-align: center; }
+        .hero h2 { font-size: 6em; margin: 0; text-align: left; font-family: 'Aeonik Regular'; }
 
-        /* Antoine Briat */
-        header h1 { 
-            margin: 0;
-            font-size: 1.5em;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-family: 'Micra', Arial, sans-serif; /* Utilise Micra avec fallback */
-        }
+        /* --- Titres secondaires --- */
+        .small-titles { display: flex; justify-content: flex-start; gap: 30px; margin-top: 20px; font-size: 1.2em; font-weight: 300; color: #aaa; text-transform: lowercase; }
+        .small-titles a { text-decoration: none; color: inherit; transition: color 0.3s; }
+        .small-titles a:hover { color: #000; }
 
-        /* police Horloger / dessinateur... */
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-            font-weight: 300;
-            color: #555;
-        }
+        /* --- Images avec texte au survol --- */
+        .image-hover-container { position: relative; width: 100%; max-width: 800px; margin: 20px auto; }
+        .image-hover-container img { width: 100%; height: auto; display: block; }
+        .hover-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: 'Helvetica'; font-size: 2.5em; font-weight: bold; text-align: center; opacity: 0; transition: opacity 0.3s ease; }
+        .image-hover-container:hover .hover-text { opacity: 1; }
+        .image-caption { text-align: left; margin: 15px 400px; font-size: 1.5em; font-weight: normal; color: #000; font-family: 'Corbel', Arial, sans-serif; }
 
-        /* Position des titres parents */
-        .hero {
-            font-size: 1em;
-            margin: 50px;
-            text-align: center;
-        }
+        /* --- Menu hamburger --- */
+        .menu-icon { position: fixed; top: 20px; right: 30px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .menu-icon div { width: 30px; height: 3px; background-color: #000; transition: transform 0.3s, opacity 0.3s; }
+        .menu-icon.active div:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-icon.active div:nth-child(2) { opacity: 0; }
+        .menu-icon.active div:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-        /* titre enfant Mes projets */
-        .hero h2 {
-            font-size: 6em;
-            margin: 0;
-            text-align: left;
-        }
-
-        /* Petits titres */
-.small-titles {
-    display: flex;
-    justify-content: flex-start; /* Aligne les titres sur la gauche */
-    gap: 30px; /* Espace entre chaque titre */
-    margin-top: 20px; /* Espace entre h2 et les petits titres */
-    font-size: 1.2em; /* Taille du texte */
-    font-weight: 300; /* Texte plus fin */
-    color: #aaa; /* Couleur gris clair */
-    text-transform: lowercase; /* Texte en minuscules */
-}
-
-.small-titles a {
-    text-decoration: none; /* Supprime le soulignement */
-    color: inherit; /* Utilise la couleur définie dans .small-titles */
-    transition: color 0.3s; /* Animation pour un effet de survol */
-}
-/* couleur effet survol */
-.small-titles a:hover {
-    color: #000; /* Devient noir au survol */
-}
-
-/* Conteneur de l'image (avec effet hover) */
-.image-hover-container {
-    position: relative;
-    width: 100%; /* Largeur de l'image */
-    max-width: 800px; /* Taille maximale de l'image */
-    margin: 20px auto; /* Centre le conteneur */
-}
-
-.image-hover-container img {
-    width: 100%; /* L'image prend toute la largeur du conteneur */
-    height: auto;
-    display: block;
-}
-/* position du texte hover */
-.hover-text {
-    position: absolute;
-    top: 50%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%); /* Décalage pour centrer parfaitement */
-    color: #fff; /* Couleur du texte en blanc */
-    font-size: 2.5em; /* Taille du texte */
-    font-weight: bold; /* Texte en gras */
-    text-align: center; /* Alignement du texte centré */
-    opacity: 0; /* Invisible par défaut */
-    transition: opacity 0.3s ease; /* Animation douce pour apparition */
-}
-
-.image-hover-container:hover .hover-text {
-    opacity: 1; /* Affiche le texte au survol */
-
-}
-
-/* Style spécifique du texte pour la troisième image (image fond blanc) */
-.third-image-container .hover-text {
-    color: #656565; /* Couleur de texte noire */
-    text-shadow: 
-        -1px -1px 0 #fff, 
-        1px -1px 0 #fff, 
-        -1px  1px 0 #fff, 
-        1px  1px 0 #fff;
-}
-
-/* Style pour les captions */
-.image-caption {
-    text-align: left; /* Aligne le texte à gauche */
-    margin: 15px 400px; /* Décalage (15px en haut, 20px sur les côtés) */
-    font-size: 1.5em; /* Légèrement plus grand */
-    font-weight: normal; /* Texte en gras */
-    color: #000000; /* Couleur légèrement plus foncée */
-    font-family: 'Corbel', Arial, sans-serif; /* Utilise Micra avec fallback */
-}
-
-        /* Position bouton Hamburger */
-        .menu-icon {
-            position: fixed;
-            top: 20px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        /* Couleur et taille bouton hamburger */
-        .menu-icon div {
-            width: 30px;
-            height: 3px;
-            background-color: #000000;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-
-        /* Menu plein écran et couleur croix */
-        .menu-fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            color: #ffffff;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        /* Texte menu plein écran */
-        .menu-fullscreen a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 2.5em;
-            margin: 15px 0;
-        }
-
-        /* Position de la croix */
-        .menu-fullscreen .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 3em;
-            cursor: pointer;
-        }
-
-        /* Animation du bouton hamburger */
-        .menu-icon.active div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-icon.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-icon.active div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+        /* --- Menu plein écran --- */
+        .menu-fullscreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; color: #fff; display: none; flex-direction: column; justify-content: center; align-items: flex-end; z-index: 1000; }
+        .menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 4em; margin: 15px 100px 15px 0; transition: color 0.3s ease; }
+        .menu-fullscreen a:hover, .menu-fullscreen a:focus { color: #fff; }
+        .menu-fullscreen a:active { color: #ddd; }
+        .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
     </style>
 </head>
 
 <body>
-    <!-- En-tête -->
-    <header>
-        <!-- Ajout du logo -->
+    <div id="loader">
         <img src="images/LOGO2.png" alt="Logo">
-        <h1 class="lined-text">antoine briat</h1>
+        <h1>Antoine Briat</h1>
+    </div>
+
+    <header>
+        <img src="images/LOGO2.png" alt="Logo">
+        <h1>Antoine Briat</h1>
         <p>Horloger / Dessinateur technique en mécanique de précision</p>
     </header>
 
-    <!-- Section principale -->
     <section class="hero">
         <h2>Mes projets.</h2>
-        <!-- Petits titres sous Mes projets -->
-<nav class="small-titles">
-    <a href="#">horlogerie</a>
-    <a href="#">électronique</a>
-    <a href="#">origamis</a>
-</nav>
+        <nav class="small-titles">
+            <a href="#">horlogerie</a>
+            <a href="#">électronique</a>
+            <a href="#">origamis</a>
+        </nav>
     </section>
 
-    <!-- Section avec image de la came et texte au survol -->
-<div class="image-hover-container">
-    <img src="images\Came.png" alt="Description de l'image">
-    <div class="hover-text">Came d'équation du temps sur Mars</div>
-</div>
-<p class="image-caption"></main></p>
+    <div class="image-hover-container">
+        <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
+        <div class="hover-text">Came d'équation du temps sur Mars</div>
+    </div>
 
-    <!-- Section avec image du mécanimsme et texte au survol -->
-<div class="image-hover-container">
-    <img src="images\Mcanisme d'edt Mars.png" alt="Description de l'image">
-    <div class="hover-text">Mécanisme d'équation du temps sur Mars</div>
-</div>
-<p class="image-caption"></main></p>
-
-    <!-- Section avec image autocad et texte au survol -->
-<div class="image-hover-container third-image-container">
-    <img src="images\Horloge Mars.png" alt="Description de l'image">
-    <div class="hover-text">Trains d'engrenages pour une horloge martienne</div>
-</div>
-<p class="image-caption"></main></p>
-
-    <!-- Bouton Hamburger -->
     <div class="menu-icon" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
-    <!-- Menu Plein Écran -->
     <div class="menu-fullscreen" id="menu">
-        <div class="close-btn" onclick="toggleMenu()">×</div>
-        <a href="#">À propos</a>
-        <a href="#">Contact</a>
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="qui suis-je.html">Qui suis-je</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const menuIcon = document.querySelector('.menu-icon');
-
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-                menuIcon.classList.remove('active');
-            } else {
-                menu.style.display = 'flex';
-                menuIcon.classList.add('active');
-            }
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+            menuIcon.classList.toggle('active');
         }
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => loader.style.display = 'none', 2000);
+        });
     </script>
 </body>
 </html>
+
+
+
 
 
 
