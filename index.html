@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Antoine Briat</title>
-    
+
     <!-- Import des polices -->
     <style>
+        /* --- Import des polices personnalisées --- */
         @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
         @font-face { font-family: 'Corbel'; src: url('./fonts/Corbel.ttf') format('truetype'); }
         @font-face { font-family: 'Aeonik Light'; src: url('fonts/AeonikTRIAL-Light.otf') format('opentype'); }
@@ -40,7 +41,7 @@
         /* --- Images avec texte au survol --- */
         .image-hover-container { position: relative; width: 100%; max-width: 800px; margin: 20px auto; }
         .image-hover-container img { width: 100%; height: auto; display: block; }
-        .hover-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: 'Helvetica'; font-size: 2.5em; font-weight: bold; text-align: center; opacity: 0; transition: opacity 0.3s ease; }
+        .hover-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-family: 'Corbel'; font-size: 2.5em; font-weight: bold; text-align: center; opacity: 0; transition: opacity 0.3s ease; }
         .image-hover-container:hover .hover-text { opacity: 1; }
         .image-caption { text-align: left; margin: 15px 400px; font-size: 1.5em; font-weight: normal; color: #000; font-family: 'Corbel', Arial, sans-serif; }
 
@@ -57,47 +58,92 @@
         .menu-fullscreen a:hover, .menu-fullscreen a:focus { color: #fff; }
         .menu-fullscreen a:active { color: #ddd; }
         .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
+
+        /* --- Footer global --- */
+        .footer { display: flex; justify-content: space-between; align-items: center; background-color: #000; color: #fff; padding: 80px 20px; margin-top: 50px; }
+        .footer-left { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding-left: 30px; }
+        .address-container p { font-size: 1.2em; color: #fff; margin: 0; }
+        iframe { border-radius: 8px; height: 200px; }
+        .footer-right { text-align: right; padding-right: 30px; }
+        .footer-right a { display: block; margin-bottom: 10px; color: #fff; text-decoration: none; font-size: 1.2em; transition: color 0.3s ease; }
+        .footer-right a:hover { color: #aaa; }
     </style>
 </head>
 
 <body>
+    <!-- Loader -->
     <div id="loader">
-        <img src="images/LOGO2.png" alt="Logo">
+        <img src="images/LOGO3.png" alt="Logo">
         <h1>Antoine Briat</h1>
     </div>
 
+    <!-- En-tête -->
     <header>
-        <img src="images/LOGO2.png" alt="Logo">
+        <img src="images/LOGO3.png" alt="Logo">
         <h1>Antoine Briat</h1>
-        <p>Horloger / Dessinateur technique en mécanique de précision</p>
+        <p>Horloger / Développement de complications astronomiques / Dessinateur technique en mécanique de précision </p>
     </header>
 
+    <!-- Section principale -->
     <section class="hero">
         <h2>Mes projets.</h2>
         <nav class="small-titles">
-            <a href="#">horlogerie</a>
+            <a href="horlogerie.html">horlogerie</a>
             <a href="#">électronique</a>
             <a href="#">origamis</a>
         </nav>
     </section>
 
+    <!-- Image avec texte au survol -->
     <div class="image-hover-container">
-        <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
-        <div class="hover-text">Came d'équation du temps sur Mars</div>
+        <a href="came.html">
+            <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
+            <div class="hover-text">Came d'équation du temps sur Mars</div>
+        </a>
     </div>
 
+    <!-- Menu hamburger -->
     <div class="menu-icon" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
+    <!-- Menu plein écran -->
     <div class="menu-fullscreen" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="je sais pas encore">Acceuil</a>
         <a href="qui suis-je.html">Qui suis-je</a>
         <a href="contact.html">Contact</a>
+        <a href="je sais pas non plus"></a>
     </div>
 
+    <!-- Footer -->
+    <div class="footer">
+        <!-- Conteneur gauche : carte + adresse -->
+        <div class="footer-left">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40639.728493604554!2d4.855100769103557!3d50.46004067781732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19905f93ba3a1%3A0x6f137223eaef9a41!2s5000%20Namur!5e0!3m2!1sfr!2sbe!4v1734639190384!5m2!1sfr!2sbe" 
+                width="300" 
+                height="200" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="address-container">
+                <p>5000 Namur<br>BELGIQUE</p>
+            </div>
+        </div>
+
+        <!-- Conteneur droit : liens -->
+        <div class="footer-right">
+            <a href="https://www.linkedin.com/in/antoine-briat-140291330/" target="_blank">LinkedIn</a>
+            <a href="documents\CV - Briat Antoine.pdf" target="_blank">curriculum vitae</a>
+        </div>
+    </div>
+
+    <!-- Script -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');

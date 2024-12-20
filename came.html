@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Came d'équation du temps</title>
+    <style>
+        /* --- Import des polices personnalisées --- */
+        @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
+        @font-face { font-family: 'Corbel'; src: url('./fonts/Corbel.ttf') format('truetype'); }
+        @font-face { font-family: 'Aeonik Light'; src: url('fonts/AeonikTRIAL-Light.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Regular'; src: url('fonts/AeonikTRIAL-Regular.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Bold'; src: url('fonts/AeonikTRIAL-Bold.otf') format('opentype'); }
+
+        /* Import des style globaux */
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #000; background-color: #fff; }
+        .container { max-width: 1200px; margin: 50px auto; padding: 20px; }
+        .section { margin-bottom: 30px; }
+        .section h3 { margin-bottom: 10px; font-size: 1.5em; font-weight: bold; }
+        .section p { font-size: 1.2em; line-height: 1.6; margin-bottom: 15px; }
+        .code-and-graphs { display: flex; gap: 20px; margin-top: 20px; align-items: flex-start; }
+        .code-section { flex: 1; display: flex; justify-content: center; }
+        .code-section img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
+        .graph-container { flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
+        .graph-container .graph-top { width: 100%; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
+        .graph-container .graph-bottom { width: 70%; margin-top: 20px; align-self: flex-end; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
+        .title { font-family: 'Aeonik Bold'; font-size: 2.5em; font-weight: bold; text-align: left; margin-bottom: 20px; } /* Augmente la taille du titre */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Titre principal -->
+        <div class="content">
+            <h1 class="title">La came d'equation du temps sur Mars</h1>
+        </div>
+
+        <!-- Contexte -->
+        <div class="section">
+            <h3>Contexte</h3>
+            <p>Projet extra-scolaire visant à concevoir une came d’équation capable de simuler les variations entre le temps solaire vrai et le temps solaire moyen sur Mars. Ce projet qui a démarré en septembre 2023 est le fruit de la rencontre entre deux de mes passions : l'astronomie et l'horlogerie.</p>
+        </div>
+
+        <!-- Processus -->
+        <div class="section">
+            <h3>Processus</h3>
+            <p>Le projet a suivi une méthodologie rigoureuse comprenant :</p>
+            <ul>
+                <li>Recherche théorique sur l'équation du temps sur Terre</li>
+                <li>Étude sur la mécanique céleste liée à l'équation du temps</li>
+                <a href="documents/L'heure sur Mars - Section 1 (Contexte et notions) - Extrait.pdf" target="_blank" style="font-size: 0.9em; color: #007BFF; text-decoration: none; margin-left: 20px;">Télécharger un extrait de l'étude (PDF)</a>
+                <li>Adaptation des paramètres de la fonction e(t) pour Mars</li>
+                <li>Comparaison et analyse de l'étude de Thierry Alhalel sur l'équation du temps sur Mars</li>
+                <li>Création des codes Python pour la transition mécanique du graphe polaire de la fonction e(t)</li>
+            </ul>
+
+            <!-- Code et Graphes côte à côte -->
+            <div class="code-and-graphs">
+                <!-- Section code -->
+                <div class="code-section">
+                    <img src="images/Code python graph eot Mars.png" alt="Code Python">
+                </div>
+
+                <!-- Section graphes séparés -->
+                <div class="graph-container">
+                    <img src="images/Fig_graph_eot_Mars.png" alt="Graphe polaire" class="graph-top">
+                    <img src="images/Transition mécanique.png" alt="Transition mécanique" class="graph-bottom">
+                </div>
+            </div>
+
+            <li>Modélisation 3D de la came sur SolidWorks</li>
+        </div>
+
+        <!-- Compétences -->
+        <div class="section">
+            <h3>Compétences développées</h3>
+            <ul>
+                <li>Astronomie</li>
+                <li>Mécanique céleste</li>
+                <li>Calculs numériques</li>
+                <li>Maîtrise de l'intelligence artificielle</li>
+                <li>Codage Python avec Visual Studio Code</li>
+                <li>Prototypage mécanique</li>
+                <li>Conception horlogère</li>
+                <li>SolidWorks</li>
+            </ul>
+        </div>
+
+        <!-- Résultats -->
+        <div class="section">
+            <h3>Résultats</h3>
+            <p>Le mécanisme conçu permet de simuler l'équation du temps martien avec une tolérance de 0,1 %, tout en respectant les contraintes de poids et de solidité.</p>
+        </div>
+
+        <!-- Défis -->
+        <div class="section">
+            <h3>Défis rencontrés</h3>
+            <p>Le dimensionnement initial des engrenages ne respectait pas les contraintes mécaniques. Une optimisation avec SolidWorks a permis d'obtenir des composants fiables et performants.</p>
+        </div>
+
+        <!-- Statut -->
+        <div class="section">
+            <h3>Statut</h3>
+            <p>Projet en cours d'amélioration, avec pour objectif d'intégrer des matériaux plus légers pour une performance accrue.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
