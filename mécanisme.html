@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Came d'équation du temps</title>
+    <title>Mécanisme d'équation du temps sur Mars</title>
     <style>
         /* --- Import des polices personnalisées --- */
         @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
@@ -21,7 +21,8 @@
         .section h3 { margin-bottom: 10px; font-family: 'Aeonik Regular'; text-transform: uppercase; font-size: 1.5em; font-weight: bold; }
         ol { counter-reset: custom-counter; list-style: none; padding-left: 20px; margin-bottom: 15px; }
         ol li { counter-increment: custom-counter; position: relative; padding-left: 40px; margin-bottom: 15px; font-size: 1em; line-height: 1.6; }
-        ol li::before { content: counter(custom-counter); position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #000; color: #fff; font-weight: bold; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; }
+        ol li::before { content: counter(custom-counter); position: absolute; left: 0; top: 0; transform: translateY(0); background-color: #000; color: #fff; font-weight: bold; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; }
+        .boxed-text { border: 2px solid #000; padding: 15px; margin-top: 10px; border-radius: 8px; background-color: #f9f9f9; font-size: 1em; line-height: 1.6; }
         ol li a { margin-left: 40px; color: #007BFF; text-decoration: none; font-size: 0.9em; }
         ol.start-6 { counter-reset: custom-counter 5; }
         .images-section { display: flex; gap: 20px; margin-top: 20px; justify-content: flex-start; }
@@ -53,55 +54,50 @@
 <body>
     <div class="container">
         <div class="section">
-            <h1 class="title">La came d'équation du temps sur Mars</h1>
+            <h1 class="title">Mécanisme d'équation du temps sur Mars</h1>
         </div>
 
         <div class="section">
             <h3>Contexte</h3>
-            <p>Projet extra-scolaire visant à concevoir une came d’équation capable de simuler les variations entre le temps solaire vrai et le temps solaire moyen sur Mars.</p>
+            <p>Projet scolaire visant à concevoir un mécanisme horloger d'équation du temps, pour Mars.</p>
         </div>
 
         <div class="section">
             <h3>Processus</h3>
-            <p>Le projet a suivi une méthodologie rigoureuse comprenant :</p>
+            <p>Le train de rouages :</p>
             <ol>
-                <li>Recherche théorique sur l'équation du temps sur Terre</li>
-                <li>Étude sur la mécanique céleste 
-                    <br><a href="documents/L'heure sur Mars - Section 1 (Contexte et notions) - Extrait.pdf" target="_blank">Télécharger un extrait de l'étude (PDF)</a>
-                </li>
-                <li>Adaptation des paramètres de la fonction e(t) pour Mars</li>
-                <li>Analyse de l'article de Thierry Alhalel 
-                    <br><a href="https://adsabs.harvard.edu/pdf/2007O%26T....65....9A" target="_blank">Voir l'article de Thierry Alhalel</a>
-                </li>
-                <li>Création des codes Python pour la transition mécanique du graphe polaire</li>
+                <li>Recherche et étude sur la méthode de Brocot pour le calcul de trains d'engrenages</li>
+                <li>Calcul du rapport entre la vitesse de rotation d'entrée et de sortie</li>
+                <li>Recherche des facteurs premiers de la fraction qui constitue le rapport</li>
+                <li>Etablissement du trains d'engrenage</li>
+                <li>Calculs des dimensions des mobiles en fonction d'une norme choisie et de son module</li>
+                <li>Conception sur Solidworks</li>
             </ol>
-            
-            <div class="code-and-graphs">
-                <div class="code-section">
-                    <img src="images/Code python graph eot Mars.png" alt="Code Python">
-                </div>
-                <div class="graph-container">
-                    <img src="images/Fig_graph_eot_Mars.png" alt="Graphe polaire" class="graph-top">
-                    <img src="images/Transition mécanique.png" alt="Transition mécanique" class="graph-bottom">
-                </div>
-            </div>
-            <ol class="start-6">
-                <li>Modélisation 3D de la came sur SolidWorks</li>
-            </ol>
-            <div class="images-section">
-                <img src="images/came_esq3D.png" alt="Esquisse 3D de la came" class="image-item">
-                <img src="images/came_macro.png" alt="Code macro" class="image-item">
-            </div>
         </div>
+
+        <div class="section">
+            <p>La détente (palpeur + rateau) :</p>
+            <ol>
+                <li>Analyse d'archives sur les connaissances du mécanisme d'équation du temps (Terre) et recherche sur internet</li>
+                <li>Croquis d'un mécanisme et aperçu des contraintes</li>
+                <li>
+                    Traduction des contraintes physiques en formules mathématiques.
+                    <div class="boxed-text">
+                        Par exemple, on ne peut pas choisir une longueur d'arc quelconque. Donc si &delta; est la longueur d'arc, je détermine que &delta; = r &times; &theta;.
+                    </div>
+                </li>
+                <li>Hiérarchisation des contraintes et résolution des formules</li>
+                <li>Conception sur Solidworks</li>
+            </ol>
+        </div>
+        
 
         <div class="section">
             <h3>Competences developpees</h3>
             <ul>
-                <li>Astronomie</li>
-                <li>Mécanique céleste</li>
-                <li>Calculs numériques</li>
-                <li>Codage Python</li>
+                <li>Maitrise de l'intelligence artificielle</li>
                 <li>Prototypage mécanique</li>
+                <li>Modélisation et calculs avancés pour la conception mécanique</li>
                 <li>Conception horlogère</li>
                 <li>Solidworks</li>
             </ul>
@@ -109,21 +105,23 @@
 
         <div class="section">
             <h3>Resultats</h3>
-            <p>La came a été conceptualisée avec des repères marquant les valeurs où (E(t)=0). Un contrepoids en tungstène sera ajouté pour équilibrer la masse.</p>
+            <p>Le mécanisme a été conceptualisé et corrigé déjà 3 fois.</p>
         </div>
 
         <div class="section">
             <h3>Defis rencontres</h3>
             <ul>
-                <li>Compréhension de la mécanique céleste</li>
-                <li>Codage des graphes de (E(t))</li>
-                <li>Conception et équilibrage sur SolidWorks</li>
+                <li>Manque d'information sur le mécanisme</li>
+                <li>Détermination du train d'engrenages</li>
+                <li>Etude mécanique de la détente</li>
+                <li>Conception de la détente</li>
+                <li>Impression 3D du mécanisme</li>
             </ul>
         </div>
 
         <div class="section">
             <h3>Statut</h3>
-            <p>Projet en cours d'amélioration, avec pour objectif d'intégrer la came dans un mécanisme imprimé en 3D.</p>
+            <p>Projet en attente d'impression.</p>
         </div>
     </div>
     <!-- Menu hamburger -->
@@ -153,10 +151,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-

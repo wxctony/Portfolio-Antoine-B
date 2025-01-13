@@ -45,6 +45,13 @@
         .image-hover-container:hover .hover-text { opacity: 1; }
         .image-caption { text-align: left; margin: 15px 400px; font-size: 1.5em; font-weight: normal; color: #000; font-family: 'Corbel', Arial, sans-serif; }
 
+        /* Conteneur pour l'effet de zoom */
+        .image-zoom-container { display: inline-block; overflow: hidden; border-radius: 8px; }
+        /* Style de l'image avec effet de zoom */
+        .image-zoom-container img { transition: transform 0.3s ease; display: block; }
+        /* Effet de zoom au survol */
+        .image-zoom-container:hover img { transform: scale(1.1); }
+
         /* --- Menu hamburger --- */
         .menu-icon { position: fixed; top: 20px; right: 30px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
         .menu-icon div { width: 30px; height: 3px; background-color: #000; transition: transform 0.3s, opacity 0.3s; }
@@ -81,7 +88,7 @@
     <header>
         <img src="images/LOGO3.png" alt="Logo">
         <h1>Antoine Briat</h1>
-        <p>Horloger / Développement de complications astronomiques / Dessinateur technique en mécanique de précision </p>
+        <p>Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision </p>
     </header>
 
     <!-- Section principale -->
@@ -89,14 +96,14 @@
         <h2>Mes projets.</h2>
         <nav class="small-titles">
             <a href="horlogerie.html">horlogerie</a>
-            <a href="#">électronique</a>
-            <a href="#">origamis</a>
+            <a href="electronique.html">électronique</a>
+            <a href="#">autres</a>
         </nav>
     </section>
 
     <!-- Image avec texte au survol -->
     <div class="image-hover-container">
-        <a href="came.html">
+        <a href="came.html" class="image-zoom-container">
             <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
             <div class="hover-text">Came d'équation du temps sur Mars</div>
         </a>
@@ -112,9 +119,8 @@
     <!-- Menu plein écran -->
     <div class="menu-fullscreen" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
-        <a href="je sais pas encore">Acceuil</a>
         <a href="qui suis-je.html">Qui suis-je</a>
-        <a href="contact.html">Contact</a>
+        <a href="documents\CV - Briat Antoine.pdf">Contact</a>
         <a href="je sais pas non plus"></a>
     </div>
 
@@ -154,16 +160,8 @@
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
-            setTimeout(() => loader.style.display = 'none', 2000);
+            setTimeout(() => loader.style.display = 'none', 500);
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
