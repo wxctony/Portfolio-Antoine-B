@@ -9,7 +9,7 @@
     .content, .content-reverse {
         display: flex;
         flex-direction: column !important; /* Force la disposition en colonne */
-        gap: 10px; /* Réduit l'espace vertical entre les éléments */
+        gap: 10px; /* Réduit l'espace entre l'image et le texte */
         align-items: center; /* Centre le contenu */
     }
     .left-section, .right-section {
@@ -20,10 +20,8 @@
     }
     .content img, .content-reverse img {
         max-width: 100%; /* Les images prennent toute la largeur disponible */
-        margin: 0; /* Supprime toute marge supplémentaire */
-        padding: 0; /* Supprime tout padding */
+        margin-bottom: 10px; /* Réduit l'espacement sous l'image */
     }
-    .left-section { margin-bottom: -20px; } /* Réduit l'espacement sous l'image sans couper l'image */
     .right-section ul {
         text-align: left; /* Aligne le texte des listes à gauche */
         padding-left: 20px; /* Ajoute un peu d'espace pour les bullets */
@@ -33,7 +31,6 @@
         margin-bottom: 10px; /* Ajoute de l'espace entre les éléments de la liste */
     }
 }
-
 
 
 
