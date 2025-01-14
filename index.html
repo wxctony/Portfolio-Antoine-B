@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Portfolio Antoine Briat</title>
 
     <!-- Import des polices -->
@@ -120,7 +121,7 @@
     <div class="menu-fullscreen" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
         <a href="qui suis-je.html">Qui suis-je</a>
-        <a href="documents\CV - Briat Antoine.pdf">Contact</a>
+        <a href="documents\CV - Briat Antoine.pdf" target="_blank">Contact</a>
         <a href="je sais pas non plus"></a>
     </div>
 
@@ -157,7 +158,6 @@
             menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
             menuIcon.classList.toggle('active');
         }
-
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => loader.style.display = 'none', 500);

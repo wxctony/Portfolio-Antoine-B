@@ -1,0 +1,26 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    nav ul {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Styles pour les écrans encore plus petits (moins de 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+}
