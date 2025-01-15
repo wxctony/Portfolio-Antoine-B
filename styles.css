@@ -1,41 +1,28 @@
-/* --- Styles de base --- */
-.content { display: flex; flex-direction: row; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
-.left-section { flex: 2; }
-.right-section { flex: 1; }
-.content-reverse { display: flex; flex-direction: row-reverse; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
+/* Styles globaux */
+/* Acceuil */
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+header { padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+header h1 { margin: 0; font-size: 1.5em; font-weight: 700; text-transform: uppercase; font-family: 'Micra', Arial, sans-serif; }
+header img { width: 100px; height: auto; margin-bottom: 10px; }
+header p { margin: 10px 0 0; font-size: 1.2em; font-weight: 300; color: #555; }
+.hero h2 { font-size: 6em; margin: 0; text-align: left; font-family: 'Aeonik Regular'; }
+.small-titles { display: flex; justify-content: flex-start; gap: 30px; margin-top: 20px; font-size: 1.2em; font-weight: 300; color: #aaa; text-transform: lowercase; }
 
-/* --- Adaptation Mobile : Écrase les styles row/row-reverse --- */
+/* Page horlogerie et électronique */
+.content, .content-reverse { display: flex; flex-direction: row; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
+.left-section, .right-section { flex: 1; text-align: left; }
+.image-zoom-container img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
+.image-zoom-container:hover img { transform: scale(1.1); }
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .content, .content-reverse {
-        display: flex;
-        flex-direction: column !important; /* Force la disposition en colonne */
-        gap: 10px; /* Réduit l'espace entre l'image et le texte */
-        align-items: center; /* Centre le contenu */
-    }
-    .left-section, .right-section {
-        width: 100%; /* Chaque section occupe toute la largeur */
-        text-align: center; /* Texte centré */
-        padding: 0 10px; /* Espacement interne pour éviter que le texte colle aux bords */
-        box-sizing: border-box; /* Inclut le padding dans la largeur */
-    }
-    .content img, .content-reverse img {
-        max-width: 100%; /* Les images prennent toute la largeur disponible */
-        margin-bottom: 10px; /* Réduit l'espacement sous l'image */
-    }
-    .right-section ul {
-        text-align: left; /* Aligne le texte des listes à gauche */
-        padding-left: 20px; /* Ajoute un peu d'espace pour les bullets */
-        margin: 0; /* Supprime les marges inutiles */
-    }
-    .right-section li {
-        margin-bottom: 10px; /* Ajoute de l'espace entre les éléments de la liste */
-    }
+    html header img { width: 60px; }
+    html header h1 { font-size: 1em; }
+    html header p { font-size: 0.7em; }
+    html .hero h2 { font-size: 3em; text-align: left; }
+    html .small-titles { font-size: 0.8em; gap: 15px; justify-content: left; }
+
+    html .content, html .content-reverse { flex-direction: column; align-items: center; gap: 20px; }
+    html .left-section, html .right-section { width: 100%; text-align: center; }
+    html .image-zoom-container img { max-width: 100%; height: auto; }
 }
-
-
-
-
-
-
-
-
