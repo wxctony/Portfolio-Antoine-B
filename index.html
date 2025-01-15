@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Antoine Briat</title>
-    
     <style>
         /* --- Import des polices personnalisées --- */
         @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
@@ -16,6 +15,7 @@
 
         /* --- Styles globaux --- */
         body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #000; background-color: #fff; }
+        .container { max-width: 1200px; margin: 50px auto; padding: 20px; }
 
         /* --- Loader --- */
         #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
@@ -23,17 +23,17 @@
         #loader h1 { font-family: 'Micra', sans-serif; font-size: 2em; color: #000; }
 
         /* --- En-tête --- */
-        header { padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        header img { width: 100px; height: auto; margin-bottom: 10px; }
+        header { margin-bottom: 50px; padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        header img { width: 100px; height: auto; margin-bottom: 0px; }
         header h1 { margin: 0; font-size: 1.5em; font-weight: 700; text-transform: uppercase; font-family: 'Micra', Arial, sans-serif; }
-        header p { margin: 10px 0 0; font-size: 1.2em; font-weight: 300; color: #555; }
-
+        header p { margin-top: 15px; font-size: 1.2em; font-weight: 300; color: #555; }
+        
         /* --- Section principale --- */
-        .hero { font-size: 1em; margin: 50px; text-align: center; }
-        .hero h2 { font-size: 6em; margin: 0; text-align: left; font-family: 'Aeonik Regular'; }
-
+        .hero { margin-top: 50px; font-size: 1em; margin: 0px; text-align: center; }
+        .hero h2 { font-size: 6em; margin: 50px 0 0; text-align: left; font-family: 'Aeonik Regular'; }
+        
         /* --- Titres secondaires --- */
-        .small-titles { display: flex; justify-content: flex-start; gap: 30px; margin-top: 20px; font-size: 1.2em; font-weight: 300; color: #aaa; text-transform: lowercase; }
+        .small-titles { display: flex; justify-content: flex-start; gap: 30px; margin-top: 10px; margin-bottom: 50px; font-size: 1.2em; font-weight: 300; color: #aaa; text-transform: lowercase; }
         .small-titles a { text-decoration: none; color: inherit; transition: color 0.3s; }
         .small-titles a:hover { color: #000; }
 
@@ -66,11 +66,21 @@
         .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
 
         /* --- Footer global --- */
-        .footer { display: flex; justify-content: space-between; align-items: center; background-color: #000; color: #fff; padding: 80px 20px; margin-top: 50px; }
-        .footer-left { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding-left: 30px; }
+        .footer { 
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #000; 
+    color: #fff; 
+    padding: 150px 50px; /* Ajoute 150px de padding en haut et en bas */
+    margin-top: 50px; 
+    box-sizing: border-box; 
+    height: 350px; /* Permet à la hauteur du footer de s'adapter au contenu */
+}
+
+        .footer-left { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding-left: 20px; margin-top: auto; margin-bottom: auto; }
         .address-container p { font-size: 1.2em; color: #fff; margin: 0; }
         iframe { border-radius: 8px; height: 200px; }
-        .footer-right { text-align: right; padding-right: 30px; }
+        .footer-right { text-align: right; padding-right: 30px; margin-top: auto; margin-bottom: auto; }
         .footer-right a { display: block; margin-bottom: 10px; color: #fff; text-decoration: none; font-size: 1.2em; transition: color 0.3s ease; }
         .footer-right a:hover { color: #aaa; }
     </style>
@@ -78,89 +88,80 @@
 </head>
 
 <body>
-    <!-- Loader -->
-    <div id="loader">
-        <img src="images/LOGO3.png" alt="Logo">
-        <h1>Antoine Briat</h1>
+        <!-- Loader -->
+        <div id="loader">
+            <img src="images/LOGO3.png" alt="Logo">
+            <h1>Antoine Briat</h1>
+        </div>
+
+        <!-- En-tête -->
+        <header>
+            <img src="images/LOGO3.png" alt="Logo">
+            <h1>Antoine Briat</h1>
+            <p>Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision </p>
+        </header>
+
+    <div class="container">
+        <!-- Section principale -->
+        <section class="hero">
+            <h2>Mes projets.</h2>
+            <nav class="small-titles">
+                <a href="horlogerie.html">horlogerie</a>
+                <a href="electronique.html">électronique</a>
+                <a href="#">autres</a>
+            </nav>
+        </section>
+
+        <!-- Image avec texte au survol -->
+        <div class="image-hover-container">
+            <a href="came.html" class="image-zoom-container">
+                <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
+                <div class="hover-text">Came d'équation du temps sur Mars</div>
+            </a>
+        </div>
+
+        <!-- Menu hamburger -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Menu plein écran -->
+        <div class="menu-fullscreen" id="menu">
+            <div class="close-btn" onclick="toggleMenu()">&times;</div>
+            <a href="qui suis-je.html">Qui suis-je</a>
+            <a href="documents\CV - Briat Antoine.pdf" target="_blank">Contact</a>
+            <a href="je sais pas non plus"></a>
+        </div>
     </div>
 
-    <!-- En-tête -->
-    <header>
-        <img src="images/LOGO3.png" alt="Logo">
-        <h1>Antoine Briat</h1>
-        <p>Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision </p>
-    </header>
-
-    <!-- Section principale -->
-    <section class="hero">
-        <h2>Mes projets.</h2>
-        <nav class="small-titles">
-            <a href="horlogerie.html">horlogerie</a>
-            <a href="electronique.html">électronique</a>
-            <a href="#">autres</a>
-        </nav>
-    </section>
-
-    <!-- Image avec texte au survol -->
-    <div class="image-hover-container">
-        <a href="came.html" class="image-zoom-container">
-            <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
-            <div class="hover-text">Came d'équation du temps sur Mars</div>
-        </a>
-    </div>
-
-    <!-- Menu hamburger -->
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <!-- Menu plein écran -->
-    <div class="menu-fullscreen" id="menu">
-        <div class="close-btn" onclick="toggleMenu()">&times;</div>
-        <a href="qui suis-je.html">Qui suis-je</a>
-        <a href="documents\CV - Briat Antoine.pdf" target="_blank">Contact</a>
-        <a href="je sais pas non plus"></a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <!-- Conteneur gauche : carte + adresse -->
-        <div class="footer-left">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40639.728493604554!2d4.855100769103557!3d50.46004067781732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19905f93ba3a1%3A0x6f137223eaef9a41!2s5000%20Namur!5e0!3m2!1sfr!2sbe!4v1734639190384!5m2!1sfr!2sbe" 
-                width="300" 
-                height="200" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <div class="address-container">
-                <p>5000 Namur<br>BELGIQUE</p>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40639.728493604554!2d4.855100769103557!3d50.46004067781732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19905f93ba3a1%3A0x6f137223eaef9a41!2s5000%20Namur!5e0!3m2!1sfr!2sbe!4v1734639190384!5m2!1sfr!2sbe" loading="lazy"></iframe>
+                <div class="address-container">
+                    <p>5000 Namur<br>BELGIQUE</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                <a href="documents\CV - Briat Antoine.pdf" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
 
-        <!-- Conteneur droit : liens -->
-        <div class="footer-right">
-            <a href="https://www.linkedin.com/in/antoine-briat-140291330/" target="_blank">LinkedIn</a>
-            <a href="documents\CV - Briat Antoine.pdf" target="_blank">curriculum vitae</a>
-        </div>
-    </div>
-
-    <!-- Script -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const menuIcon = document.querySelector('.menu-icon');
-            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-            menuIcon.classList.toggle('active');
-        }
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            setTimeout(() => loader.style.display = 'none', 500);
-        });
-    </script>
+        <!-- Script -->
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                const menuIcon = document.querySelector('.menu-icon');
+                menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+                menuIcon.classList.toggle('active');
+            }
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('loader');
+                setTimeout(() => loader.style.display = 'none', 500);
+            });
+        </script>
 </body>
 </html>
