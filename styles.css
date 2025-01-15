@@ -60,12 +60,16 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
     /* Head */
     header img { margin: 0 0 0; width: 45px; height: auto; }
     header h1 { font-size: 0.8em; }
-    header p { margin: 7px 0 0; font-size: 0.5em; text-align: center; }
+    header p { margin: 7px 50px 0; font-size: 0.5em; text-align: center; }
     /* titles */
     .hero h2 { font-size: 2.2em; text-align: left; }
     .small-titles { justify-content: left; gap: 15px; font-size: 0.6em; }
     /* Came */
     .image-hover-container { margin: 10px auto; max-width: 90%; }
+    .hover-text {
+        font-family: 'Arial', sans-serif; /* Change la police ici pour mobile */
+        font-size: 1em; /* Ajuste la taille de la police pour mobile */
+    }
     /* Footer */
     .footer {
         flex-direction: row; /* Empile le contenu du footer */
@@ -83,8 +87,8 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
         margin-right: 10px;
     }
     .footer-left iframe {
-        height: 100px; /* Ajuste la hauteur pour les mobiles */
-        width: 50%;
+        height: auto; /* Ajuste la hauteur pour les mobiles */
+        width: 100%;
         text-align: left;
     }
     .address-container p { font-size: 0.5em; color: #fff; margin: 0; }
