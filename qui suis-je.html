@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qui suis-je</title>
+    <title>Qui suis-je - Antoine Briat</title>
+    
+    <style>
+        /* --- Import des polices personnalisées --- */
+        @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
+        @font-face { font-family: 'Corbel'; src: url('./fonts/Corbel.ttf') format('truetype'); }
+        @font-face { font-family: 'Aeonik Light'; src: url('fonts/AeonikTRIAL-Light.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Regular'; src: url('fonts/AeonikTRIAL-Regular.otf') format('opentype'); }
+        @font-face { font-family: 'Aeonik Bold'; src: url('fonts/AeonikTRIAL-Bold.otf') format('opentype'); }
 
-    <!-- Import du fichier CSS commun -->
-    <link rel="stylesheet" href="style.css"> 
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #000; background-color: #fff; }
+        .content { width: 100%;; max-width: 900px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        p { font-family: 'Aeonik Regular', Arial, sans-serif; font-size: 1.5rem; line-height: 2; }
+
+        /* --- Menu hamburger --- */
+        .menu-icon { position: fixed; top: 20px; right: 30px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .menu-icon div { width: 30px; height: 3px; background-color: #000; transition: transform 0.3s, opacity 0.3s; }
+        .menu-icon.active div:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-icon.active div:nth-child(2) { opacity: 0; }
+        .menu-icon.active div:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* --- Menu plein écran --- */
+        .menu-fullscreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; color: #fff; display: none; flex-direction: column; justify-content: center; align-items: flex-end; z-index: 1000; }
+        .menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 4em; margin: 15px 100px 15px 0; transition: color 0.3s ease; }
+        .menu-fullscreen a:hover, .menu-fullscreen a:focus { color: #fff; }
+        .menu-fullscreen a:active { color: #ddd; }
+        .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
+    </style>
+    <link rel="stylesheet" href="style_quisuisje.css">
 </head>
+
 <body>
-    <!-- Contenu principal de la page -->
-    <h1>Qui suis-je</h1>
-    <p>Bienvenue sur la page "Qui suis-je".</p>
+    <div class="content">
+        <p>Jeune papa horloger, spécialisé en DAO électricité-mécanique, je développe plusieurs projets, dont une complication horlogère astronomique innovante.<br> 
+            <span style="display: block; margin-top: 10px;"></span>Ces projets naissent de ma passion pour les arts et les sciences.
+            En explorant des projets variés, j'approfondis mes connaissances en horlogerie, mécanique horlogère, mécanique céleste, mathématiques, codage (Python, HTML) et dessin technique.<br>
+            <span style="display: block; margin-top: 10px;"></span>Par ailleurs, je maîtrise également l'art de l'origami et j'aime le sport, la cuisine, la guitare et je prends plaisir à dessiner régulièrement. Ces activités artistiques et techniques me permettent d'associer différentes compétences dans mes projets et d'en acquérir de nouvelles avec aisance. </p>
+    </div>
+    <!-- Menu hamburger -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Menu plein écran -->
+    <div class="menu-fullscreen" id="menu">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Acceuil</a>
+        <a href="documents\CV - Briat Antoine.pdf" target="_blank">Contact</a>
+        <a href="je sais pas non plus"></a>
+    </div>
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+            menuIcon.classList.toggle('active');
+        }
+
+    </script>
+    
 </body>
+
 </html>
-
-
