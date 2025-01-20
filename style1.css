@@ -68,7 +68,7 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
     .image-hover-container { margin: 10px auto; max-width: 100%; }
     .hover-text {
         font-family: 'Arial', sans-serif; /* Change la police ici pour mobile */
-        font-size: 1em; /* Ajuste la taille de la police pour mobile */
+        font-size: 1.2em; /* Ajuste la taille de la police pour mobile */
     }
     /* Footer */
     .footer {
