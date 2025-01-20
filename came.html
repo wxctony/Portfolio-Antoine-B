@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Came d'équation du temps</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* --- Import des polices personnalisées --- */
         @font-face { font-family: 'Micra'; src: url('./fonts/Micra-Normal.ttf') format('truetype'); }
@@ -27,6 +26,7 @@
         ol.start-6 { counter-reset: custom-counter 5; }
         .images-section { display: flex; gap: 20px; margin-top: 20px; justify-content: flex-start; }
         .image-item { width: 40%; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
+        .image-item1 { width: 40%; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
         img[alt="Code macro"] { width: 58%; height: auto; }
         .code-and-graphs { display: flex; gap: 20px; margin-top: 20px; align-items: flex-start; }
         .code-section { flex: 1; display: flex; justify-content: center; }
@@ -49,6 +49,7 @@
         .menu-fullscreen a:active { color: #ddd; }
         .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
     </style>
+    <link rel="stylesheet" href="style_came.css">
 </head>
 
 <body>
@@ -90,7 +91,7 @@
                 <li>Modélisation 3D de la came sur SolidWorks</li>
             </ol>
             <div class="images-section">
-                <img src="images/came_esq3D.png" alt="Esquisse 3D de la came" class="image-item">
+                <img src="images/came_esq3D.png" alt="Esquisse 3D de la came" class="image-item1">
                 <img src="images/came_macro.png" alt="Code macro" class="image-item">
             </div>
         </div>
@@ -153,10 +154,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-

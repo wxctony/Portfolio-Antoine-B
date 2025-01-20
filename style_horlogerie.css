@@ -2,12 +2,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { margin: 0; padding: 0; overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; background-color: #fff; }
 .container { max-width: 1200px; margin: 50px auto; padding: 20px; }
-
-/* --- Contenu --- */
-.content, .content-reverse { display: flex; flex-direction: row; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
+/* --- Contenu (Desktop) --- */
+.content { display: flex; flex-direction: row; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
+.content-reverse { display: flex; flex-direction: row-reverse; gap: 50px; align-items: flex-start; margin-bottom: 100px; }
 .left-section, .right-section { flex: 1; text-align: left; }
 .image-zoom-container img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
 .image-zoom-container:hover img { transform: scale(1.1); }
+.right-section ul { list-style-position: outside; /* Permet de garder les puces en dehors du texte */ margin-left: 20px; /* Décale la liste pour un meilleur alignement */padding-left: 20px; /* Ajoute un espace pour éviter que le texte ne touche les puces */ }
 
 /* --- Menu hamburger --- */
 .menu-icon { position: fixed; top: 20px; right: 30px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
@@ -26,7 +27,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: Arial, Helvetica,
     .container {
         max-width: 100%;
         margin: 10px auto;
-        padding: 10px;
+        padding: 20px;
     }
 
     .content, .content-reverse {
@@ -54,14 +55,23 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: Arial, Helvetica,
         border-radius: 8px;
     }
 
+    .right-section h1 {
+        margin-bottom: 20px; /* Ajuste l'espace selon tes besoins */
+        font-size: 1.8em;
+    }
+
     .right-section h3 {
-        font-size: 1.5em;
+        font-size: 1.3em;
         margin-top: 10px;
     }
 
     .right-section p {
-        font-size: 1em;
-    }
+        text-align: justify; /* Justifie le texte pour qu'il occupe toute la largeur */
+        width: 100%; /* Assure que le paragraphe prend toute la largeur */
+        margin: 0; /* Supprime les marges par défaut */
+        padding: 0 10px; /* Ajoute un espace de 20px à gauche et à droite */
+        box-sizing: border-box; /* Prend en compte les padding dans la largeur totale */
+    }    
 
     .menu-fullscreen a {
         font-size: 2em;
