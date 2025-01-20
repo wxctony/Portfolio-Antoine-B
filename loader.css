@@ -15,7 +15,7 @@
 #loader img {
     width: 100px; 
     height: auto;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 #loader h1 {
     font-family: 'Micra', sans-serif;
