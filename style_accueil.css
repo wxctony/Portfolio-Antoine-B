@@ -49,7 +49,7 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
 .footer-left, .footer-right { width: 45%; }
 .footer-left iframe { width: 65%; border: 0; border-radius: 8px; }
 .footer-right a { color: #fff; text-decoration: none; margin-bottom: 10px; display: block; }
-.footer-right a:hover { color: #aaa; }
+.footer-right a:hover { color: #ffffff; }
 .address-container p { font-size: 1.2em; color: #fff; margin: 0; }
 
 /* Media Queries */
@@ -96,7 +96,15 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
         width: 100%;
         text-align: left;
     }
-    .address-container p { font-size: 0.5em; color: #fff; margin: 0; }
+    .address-container p { font-size: 0.5em; color: #fff; margin: 0; text-decoration: none !important; /* Supprime le soulignement */ pointer-events: none; /* Désactive l'interaction */}
     .footer-right a { display: block; margin-bottom: 10px; color: #fff; text-decoration: none; font-size: 0.8em; transition: color 0.3s ease; text-decoration: underline; }
-   
+    
+    /* Ajustement du loader pour mobile */
+    #loader img {
+        width: 40px; /* Réduction de la taille de l'image */
+        height: auto;
+    }
+    #loader h1 {
+        font-size: 1em; /* Réduction de la taille du texte */
+    }  
 }
