@@ -7,9 +7,9 @@ body {
 }
 
 .content {
-    width: 90%; /* Ajustement pour mobile */
-    max-width: 900px;
-    padding: 20px;
+    width: 80%; /* Réduction de la largeur */
+    max-width: 700px; /* Réduction de la largeur maximale */
+    padding: 15px; /* Réduction du padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,9 +23,9 @@ body {
 
 p {
     font-family: 'Aeonik Regular', Arial, sans-serif;
-    font-size: 1.5rem;
-    line-height: 2;
-    max-width: 800px;
+    font-size: 1.3rem; /* Réduction de la taille de police */
+    line-height: 1.8; /* Ajustement de l'interligne */
+    max-width: 600px; /* Réduction de la largeur maximale du texte */
 }
 
 /* --- Menu hamburger --- */
@@ -37,23 +37,24 @@ p {
 
 /* --- Menu plein écran --- */
 .menu-fullscreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; color: #fff; display: none; flex-direction: column; justify-content: center; align-items: flex-end; z-index: 1000; }
-.menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 4em; margin: 15px 100px; transition: color 0.3s ease; }
+.menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 3em; margin: 15px 80px; transition: color 0.3s ease; }
 .menu-fullscreen a:hover { color: #fff; }
 
 /* --- Media Queries pour adaptation mobile --- */
 @media (max-width: 768px) {
     .content {
-        width: 95%;
-        padding: 15px;
+        width: 90%; /* Ajustement pour mobile */
+        padding: 10px;
     }
 
     p {
-        font-size: 1.2rem;
-        line-height: 1.8;
+        font-size: 0.9rem;
+        line-height: 1.6;
         max-width: 100%;
     }
 
     .menu-fullscreen a {
-        font-size: 2em;
-        margin: 10px 50px;
+        font-size: 1.8em;
+        margin: 10px 40px;
     }
+}

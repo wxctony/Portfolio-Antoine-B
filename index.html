@@ -66,17 +66,7 @@
         .menu-fullscreen .close-btn { position: absolute; top: 20px; right: 30px; font-size: 3em; cursor: pointer; }
 
         /* --- Footer global --- */
-        .footer { 
-    display: flex; 
-    justify-content: space-between; 
-    background-color: #000; 
-    color: #fff; 
-    padding: 150px 50px; /* Ajoute 150px de padding en haut et en bas */
-    margin-top: 50px; 
-    box-sizing: border-box; 
-    height: 350px; /* Permet à la hauteur du footer de s'adapter au contenu */
-}
-
+        .footer {  display: flex; justify-content: space-between; background-color: #000; color: #fff; padding: 150px 50px; /* Ajoute 150px de padding en haut et en bas */ margin-top: 50px; box-sizing: border-box; height: 350px; /* Permet à la hauteur du footer de s'adapter au contenu */ }
         .footer-left { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; padding-left: 20px; margin-top: auto; margin-bottom: auto; }
         .address-container p { font-size: 1.2em; color: #fff; margin: 0; }
         iframe { border-radius: 8px; height: 200px; }
@@ -88,6 +78,14 @@
 </head>
 
 <body>
+        <!-- Sélecteur de langue déplacé à gauche -->
+        <div id="language-switcher" style="position: fixed; top: 20px; left: 20px;">
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
         <!-- Loader -->
         <div id="loader">
             <img src="images/LOGO3.png" alt="Logo">
@@ -97,26 +95,28 @@
         <!-- En-tête -->
         <header>
             <img src="images/LOGO3.png" alt="Logo">
-            <h1>Antoine Briat</h1>
-            <p>Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision </p>
+            <h1 data-lang-fr="Antoine Briat" data-lang-en="Antoine Briat">Antoine Briat</h1>
+            <p data-lang-fr="Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision" data-lang-en="Watchmaker / Self-taught developer of astronomical complications / Technical draftsman in precision mechanics">
+                Horloger / Développeur autodidacte de complications astronomiques / Dessinateur technique en mécanique de précision
+            </p>
         </header>
 
-    <div class="container">
-        <!-- Section principale -->
-        <section class="hero">
-            <h2>Mes projets.</h2>
-            <nav class="small-titles">
-                <a href="horlogerie.html">horlogerie</a>
-                <a href="electronique.html">électronique</a>
-                <a href="#">autres</a>
-            </nav>
-        </section>
+        <div class="container">
+            <!-- Section principale -->
+            <section class="hero">
+                <h2 data-lang-fr="Mes projets." data-lang-en="My projects.">Mes projets.</h2>
+                <nav class="small-titles">
+                    <a href="horlogerie.html" data-lang-fr="horlogerie" data-lang-en="watchmaking">horlogerie</a>
+                    <a href="electronique.html" data-lang-fr="électronique" data-lang-en="electronics">électronique</a>
+                    <a href="#" data-lang-fr="autres" data-lang-en="others">autres</a>
+                </nav>
+            </section>
 
         <!-- Image avec texte au survol -->
         <div class="image-hover-container">
             <a href="came.html" class="image-zoom-container">
                 <img src="images/Came.png" alt="Came d'équation du temps sur Mars">
-                <div class="hover-text">Came d'équation du temps sur Mars</div>
+                <div class="hover-text"><p data-lang-fr="Came d'équation du temps sur Mars" data-lang-en="Equation of time cam for Mars">Came d'équation du temps sur Mars</p></div>
             </a>
         </div>
 
@@ -130,7 +130,7 @@
         <!-- Menu plein écran -->
         <div class="menu-fullscreen" id="menu">
             <div class="close-btn" onclick="toggleMenu()">&times;</div>
-            <a href="qui suis-je.html">Qui suis-je</a>
+            <a href="qui suis-je.html" data-lang-fr="Qui suis-je" data-lang-en="About me">Qui suis-je</a>
             <a href="documents\CV - Briat Antoine.pdf" target="_blank">Contact</a>
             <a href="je sais pas non plus"></a>
         </div>
@@ -141,7 +141,9 @@
             <div class="footer-left">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40639.728493604554!2d4.855100769103557!3d50.46004067781732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19905f93ba3a1%3A0x6f137223eaef9a41!2s5000%20Namur!5e0!3m2!1sfr!2sbe!4v1734639190384!5m2!1sfr!2sbe" loading="lazy"></iframe>
                 <div class="address-container">
-                    <p>5000 Namur<br>BELGIQUE</p>
+                    <p data-lang-fr="5000 Namur" data-lang-en="5000 Namur">5000 Namur</p>
+                        <p><span style="display:block;" data-lang-fr="Belgique" data-lang-en="Belgium">Belgique</span>
+                    </p>
                 </div>
             </div>
             <div class="footer-right">
@@ -163,5 +165,6 @@
                 setTimeout(() => loader.style.display = 'none', 500);
             });
         </script>
+        <script src="script_en.js"></script>
 </body>
 </html>
