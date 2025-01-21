@@ -44,7 +44,7 @@ ol.start-6 { counter-reset: custom-counter 5; }
 .section ul li {
     font-size: 1em;
     line-height: 1.6;
-    margin-bottom: 10px; 
+    margin-bottom: 2.5px; 
     padding-left: 10px;
 }
 
