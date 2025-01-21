@@ -23,6 +23,7 @@
         ol li { counter-increment: custom-counter; position: relative; padding-left: 40px; margin-bottom: 15px; font-size: 1em; line-height: 1.6; }
         ol li::before { content: counter(custom-counter); position: absolute; left: 0; top: 50%; transform: translateY(-50%); background-color: #000; color: #fff; font-weight: bold; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; }
         ol li a { margin-left: 40px; color: #007BFF; text-decoration: none; font-size: 0.9em; }
+        ol a { margin-left: 80px; color: #007BFF; text-decoration: none; font-size: 0.9em; }
         ol.start-6 { counter-reset: custom-counter 5; }
         .images-section { display: flex; gap: 20px; margin-top: 20px; justify-content: flex-start; }
         .image-item { width: 40%; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
@@ -74,14 +75,19 @@
             <p data-lang-fr="Le projet a suivi une méthodologie rigoureuse comprenant :" data-lang-en="The project followed a rigorous methodology including:">Le projet a suivi une méthodologie rigoureuse comprenant :</p>
             <ol>
                 <li data-lang-fr="Recherche théorique sur l'équation du temps sur Terre" data-lang-en="Theoretical research on the equation of time on Earth">Recherche théorique sur l'équation du temps sur Terre</li>
-                <li data-lang-fr="Étude sur la mécanique céleste" data-lang-en="Study of celestial mechanics">Étude sur la mécanique céleste 
-                    <br><a href="documents/L'heure sur Mars - Section 1 (Contexte et notions) - Extrait.pdf" target="_blank" 
-                        data-lang-fr="Télécharger un extrait de l'étude (PDF)" data-lang-en="Download an excerpt from the study (PDF)">Télécharger un extrait de l'étude (PDF)</a>
-                </li>
+                
+                <li data-lang-fr="Étude sur la mécanique céleste" data-lang-en="Study on Celestial Mechanics">Étude sur la mécanique céleste
+                </li> 
+                <a href="documents/L'heure sur Mars - Section 1 (Contexte et notions) - Extrait.pdf" target="_blank" data-lang-fr="Télécharger un extrait de l'étude (PDF)" 
+                data-lang-en="Download an excerpt from the study (PDF)">Télécharger un extrait de l'étude (PDF)</a>
+                
                 <li data-lang-fr="Adaptation des paramètres de la fonction e(t) pour Mars" data-lang-en="Adaptation of the e(t) function parameters for Mars">Adaptation des paramètres de la fonction e(t) pour Mars</li>
-                <li data-lang-fr="Analyse de l'article de Thierry Alhalel" data-lang-en="Analysis of Thierry Alhalel's article">Analyse de l'article de Thierry Alhalel 
-                    <br><a href="https://adsabs.harvard.edu/pdf/2007O%26T....65....9A" target="_blank" data-lang-fr="Voir l'article de Thierry Alhalel" data-lang-en="View Thierry Alhalel's article">Voir l'article de Thierry Alhalel</a>
+                
+                <li data-lang-fr="Analyse de l'article de Thierry Alhalel" data-lang-en="Analysis of Thierry Alhalel's article">Analyse de l'article de Thierry Alhalel
                 </li>
+                <a href="https://adsabs.harvard.edu/pdf/2007O%26T....65....9A" target="_blank" data-lang-fr="Voir l'article de Thierry Alhalel" 
+                data-lang-en="View Thierry Alhalel's article">Voir l'article de Thierry Alhalel</a>
+                
                 <li data-lang-fr="Création des codes Python pour la transition mécanique du graphe polaire" 
                     data-lang-en="Creation of Python codes for the mechanical transition of the polar graph">Création des codes Python pour la transition mécanique du graphe polaire</li>
             </ol>

@@ -127,6 +127,11 @@ img[alt="Code macro"] { width: 58%; height: auto; }
         font-size: 0.85em;
     }
 
+    ol a {
+        font-size: 0.85em;
+        margin-left: 40px;
+    }
+
     .menu-fullscreen a {
         font-size: 2em;
         margin: 10px 50px;
