@@ -37,7 +37,7 @@ p {
 
 /* --- Menu plein écran --- */
 .menu-fullscreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; color: #fff; display: none; flex-direction: column; justify-content: center; align-items: flex-end; z-index: 1000; }
-.menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 3em; margin: 15px 80px; transition: color 0.3s ease; }
+.menu-fullscreen a { font-family: 'Aeonik Light', sans-serif; color: #aaa; text-decoration: none; font-size: 4em; margin: 15px 80px; transition: color 0.3s ease; }
 .menu-fullscreen a:hover { color: #fff; }
 
 /* --- Media Queries pour adaptation mobile --- */
