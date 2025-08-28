@@ -62,7 +62,7 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
     .container { max-width: 100%; margin: 10px; padding: 10px; }
 
     /* Head */
-    header img { margin: 0 0 0; width: 45px; height: auto; }
+    header img { margin: 0 0 0; width: 135px; height: auto; }
     header h1 { font-size: 0.8em; }
     header p { margin: 7px 50px 0; font-size: 0.5em; text-align: center; }
     /* titles */
@@ -104,7 +104,7 @@ header p { font-size: 1.2em; font-weight: 300; color: #555; }
     
     /* Ajustement du loader pour mobile */
     #loader img {
-        width: 40px; /* Réduction de la taille de l'image */
+        width: 240px; /* Réduction de la taille de l'image */
         height: auto;
     }
     #loader h1 {
